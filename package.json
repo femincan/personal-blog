@@ -10,7 +10,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint .",
-    "lint:staged": "lint-staged",
+    "lint:staged": "lint-staged -p false",
     "lint:fix": "eslint . --fix",
     "format": "prettier ./**/*.{js,cjs,mjs,ts,astro} --write"
   },
@@ -31,9 +31,7 @@
     "prettier-plugin-astro": "^0.12.1"
   },
   "lint-staged": {
-    "*.{js,cjs,mjs,ts,astro}": [
-      "prettier --write",
-      "eslint"
-    ]
+    "*": "prettier --write",
+    "*.{js,cjs,mjs,ts,astro}": "eslint"
   }
 }
