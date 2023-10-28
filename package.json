@@ -12,7 +12,7 @@
     "lint": "eslint .",
     "lint:staged": "lint-staged -p false",
     "lint:fix": "eslint . --fix",
-    "format": "prettier . --write --plugin=prettier-plugin-astro --plugin=prettier-plugin-tailwindcss"
+    "format": "prettier . --write --ignore-unknown --plugin=prettier-plugin-astro --plugin=prettier-plugin-tailwindcss"
   },
   "dependencies": {
     "@astrojs/check": "^0.2.1",
@@ -45,7 +45,7 @@
     "prettier-plugin-tailwindcss": "^0.5.6"
   },
   "lint-staged": {
-    "*": "prettier --write",
+    "*": "prettier --write --ignore-unknown --plugin=prettier-plugin-astro --plugin=prettier-plugin-tailwindcss",
     "*.{js,cjs,mjs,ts,astro}": "eslint"
   }
 }
