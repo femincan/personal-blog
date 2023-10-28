@@ -1,0 +1,16 @@
+---
+import convertMarkdown from '@src/utils/convertMarkdown';
+
+type Props = {
+  markdown: string;
+};
+
+const { markdown } = Astro.props;
+
+const convertedHtml = await convertMarkdown(markdown);
+---
+
+<div
+  class="prose prose-lg mx-auto prose-pre:rounded-lg prose-pre:bg-transparent prose-pre:p-0"
+  set:html={convertedHtml}
+/>
