@@ -1,4 +1,5 @@
 {
   "singleQuote": true,
-  "plugins": ["prettier-plugin-astro"]
+  "useTabs": false,
+  "plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"]
 }
