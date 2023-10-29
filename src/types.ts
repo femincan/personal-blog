@@ -1,3 +1,16 @@
+export type Author = {
+  profilePicture: string;
+  name: string;
+  bio: {
+    markdown: string;
+  };
+  socialMediaLinks: {
+    twitter: string;
+    github: string;
+    linkedin: string;
+  };
+};
+
 export type Post = {
   slug: string;
   title: string;
