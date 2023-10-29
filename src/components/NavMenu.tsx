@@ -17,6 +17,10 @@ const NavMenu = () => {
       text: 'Home',
     },
     {
+      href: '/blog',
+      text: 'Blog',
+    },
+    {
       href: '/about',
       text: 'About',
     },
