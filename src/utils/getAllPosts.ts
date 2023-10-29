@@ -12,6 +12,7 @@ const getAllPosts = async () => {
         node {
           slug
           title
+          readTimeInMinutes
           author {
             name
           }

@@ -12,4 +12,5 @@ export type Post = {
   content: {
     markdown: string;
   };
+  readTimeInMinutes: number;
 };
