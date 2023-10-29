@@ -20,7 +20,7 @@ const getBlogData = async () => {
       profilePicture
       name
       bio {
-        markdown
+        text
       }
       socialMediaLinks {
         twitter

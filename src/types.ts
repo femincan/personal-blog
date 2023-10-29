@@ -2,7 +2,7 @@ export type Author = {
   profilePicture: string;
   name: string;
   bio: {
-    markdown: string;
+    text: string;
   };
   socialMediaLinks: {
     twitter: string;
