@@ -22,17 +22,18 @@ export type Blog = {
   author: Author;
 };
 
-export type Post = {
+export type PostPreview = {
   slug: string;
   title: string;
-  author: {
-    name: string;
-  };
   publishedAt: string;
-  url: string;
   coverImage: {
     url: string;
   };
+  brief: string;
+};
+
+export type Post = PostPreview & {
+  url: string;
   content: {
     markdown: string;
   };
