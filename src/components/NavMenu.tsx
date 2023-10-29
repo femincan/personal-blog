@@ -2,7 +2,7 @@ import { For, createSignal } from 'solid-js';
 
 const NavLink = (props: { href: string; children: string }) => {
   return (
-    <li>
+    <li class="text-base font-medium">
       <a href={props.href}>{props.children}</a>
     </li>
   );
@@ -26,7 +26,7 @@ const NavMenu = () => {
     <nav>
       <button
         onClick={() => setIsOpen((prev) => !prev)}
-        class="btn btn-circle btn-primary swap swap-rotate btn-sm sm:hidden"
+        class="btn btn-circle btn-secondary swap swap-rotate btn-sm sm:hidden"
         classList={{ 'swap-active': isOpen() }}
       >
         <svg
