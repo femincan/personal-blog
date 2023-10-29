@@ -1,0 +1,36 @@
+---
+import { Image } from 'astro:assets';
+import dayjs from 'dayjs';
+import type { Post } from '@src/types';
+
+type Props = {
+  post: Post;
+};
+
+const { post } = Astro.props;
+const href = `/${post.slug}`;
+const description = post.content.markdown.slice(0, 145);
+---
+
+<div class="card bg-zinc-800 shadow-sm">
+  <div class="card-body px-2 py-4 sm:px-4 sm:py-8 md:px-6">
+    <figure class="mb-5 w-auto justify-stretch md:mb-10">
+      <a href={href}>
+        <Image
+          src={post.coverImage.url}
+          class="auto h-full"
+          height="420"
+          width="800"
+          alt={post.title}
+        />
+      </a>
+    </figure>
+    <h2 class="card-title md:text-2xl">
+      <a href={href}>{post.title}</a>
+    </h2>
+    <p class="text-sm md:text-base">
+      <a href={href}>{dayjs(post.publishedAt).format('D MMMM YYYY')}</a>
+    </p>
+    <p class="md:text-lg"><a href={href}>{description}...</a></p>
+  </div>
+</div>
