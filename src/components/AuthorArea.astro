@@ -1,0 +1,23 @@
+---
+import type { Author } from '@src/types';
+import { Image } from 'astro:assets';
+
+type Props = {
+  author: Author;
+};
+const { author } = Astro.props;
+---
+
+<div
+  class="flex flex-col items-center gap-10 text-center text-lg"
+  style="text-wrap:balance;"
+>
+  <Image
+    src={author.profilePicture}
+    width="300"
+    height="300"
+    class="h-32 w-32"
+    alt={author.name}
+  />
+  <p>{author.bio.text}</p>
+</div>
