@@ -1,16 +1,23 @@
 ---
+import BaseLayout from '@src/layouts/BaseLayout.astro';
+import getBlogData from '@src/utils/getBlogData';
+import getLatestPosts from '@src/utils/getLatestPosts';
+import LatestPosts from '@src/components/PostList.astro';
+import AuthorArea from '@src/components/AuthorArea.astro';
 
+const blogData = await getBlogData();
+const posts = await getLatestPosts();
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout
+  pageTitle={blogData.title}
+  pageDescription={blogData.about.text}
+  pageImage={blogData.ogImageUrl}
+  pageType="website"
+>
+  <div class="flex flex-col gap-14">
+    <AuthorArea author={blogData.author} />
+    <h2 class="text-3xl font-extrabold md:text-4xl">Latest Blog Posts</h2>
+    <LatestPosts posts={posts} />
+  </div>
+</BaseLayout>
