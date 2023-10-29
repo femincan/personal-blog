@@ -1,5 +1,10 @@
 ---
+import getBlogData from '@src/utils/getBlogData';
 import Logo from './Logo.astro';
+
+const {
+  author: { socialMediaLinks },
+} = await getBlogData();
 ---
 
 <div class="bg-base-300">
@@ -17,7 +22,7 @@ import Logo from './Logo.astro';
     <nav
       class="grid-flow-col gap-4 justify-self-center md:place-self-center md:justify-self-end"
     >
-      <a href="https://twitter.com/femincan">
+      <a href={socialMediaLinks.twitter}>
         <svg
           role="img"
           width="24"
@@ -32,7 +37,7 @@ import Logo from './Logo.astro';
           ></path>
         </svg>
       </a>
-      <a href="https://github.com/femincan">
+      <a href={socialMediaLinks.github}>
         <svg
           role="img"
           width="24"
@@ -47,7 +52,7 @@ import Logo from './Logo.astro';
           ></path>
         </svg>
       </a>
-      <a href="https://linkedin.com/in/femincan">
+      <a href={socialMediaLinks.linkedin}>
         <svg
           role="img"
           width="24"
