@@ -1,33 +1,22 @@
-import type { Post } from '@src/types';
+import type { PostPreview } from '@src/types';
 
-const getAllPosts = async () => {
+const getLatestPosts = async () => {
   const response = await fetch('https://gql.hashnode.com', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       query: `{
-  publication(id: "642d7e9ceaad3d174f7381de") {
-    posts(first: 20) {
+  publication(id: "${import.meta.env.HASHNODE_PUBLICATION_ID}") {
+    posts(first: 6) {
       edges {
         node {
           slug
           title
-          readTimeInMinutes
-          author {
-            name
-          }
           publishedAt
-          url
           coverImage {
             url
           }
-          seo {
-            title
-            description
-          }
-          content {
-            markdown
-          }
+          brief
         }
       }
     }
@@ -39,8 +28,8 @@ const getAllPosts = async () => {
   const json = await response.json();
 
   return json.data.publication.posts.edges.map(
-    (edge: { node: Post }) => edge.node,
-  ) as Post[];
+    (edge: { node: PostPreview }) => edge.node,
+  ) as PostPreview[];
 };
 
-export default getAllPosts;
+export default getLatestPosts;
