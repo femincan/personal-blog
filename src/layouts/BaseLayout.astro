@@ -1,0 +1,57 @@
+---
+import Navbar from '@src/components/Navbar.astro';
+import Footer from '@src/components/Footer.astro';
+
+import '@src/styles/index.css';
+
+type Props = {
+  pageTitle: string;
+  pageDescription: string;
+  pageImage: string;
+  pageType: 'website' | 'article';
+};
+
+const { pageTitle, pageDescription, pageImage, pageType } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <meta name="image" content={pageImage} />
+    <meta name="theme-color" content="#1EB854" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:image" content={pageImage} />
+    <meta property="og:image:alt" content={pageTitle} />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:type" content={pageType} />
+    <meta property="og:site_name" content={pageTitle} />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content={pageTitle} />
+    <meta property="twitter:url" content={Astro.url.href} />
+    <meta property="twitter:description" content={pageDescription} />
+    <meta property="twitter:image" content={pageImage} />
+    <meta property="twitter:image:alt" content={pageTitle} />
+    <meta property="twitter:creator" content="femincan" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://cdn.hashnode.com/res/hashnode/image/upload/v1684356184572/D8ooHANQV.png?auto=compress,format&format=webp&fm=png"
+    />
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body>
+    <div class="flex h-full w-full flex-col">
+      <Navbar />
+      <div
+        class="container mx-auto max-w-3xl flex-1 px-5 py-14 sm:px-10 md:px-20"
+      >
+        <slot />
+      </div>
+      <Footer />
+    </div>
+  </body>
+</html>
