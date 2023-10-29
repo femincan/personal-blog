@@ -1,15 +1,14 @@
 ---
 import { Image } from 'astro:assets';
 import dayjs from 'dayjs';
-import type { Post } from '@src/types';
+import type { PostPreview } from '@src/types';
 
 type Props = {
-  post: Post;
+  post: PostPreview;
 };
 
 const { post } = Astro.props;
-const href = `/${post.slug}`;
-const description = post.content.markdown.slice(0, 145);
+const href = `/blog/${post.slug}`;
 ---
 
 <div class="card bg-zinc-800 shadow-sm">
@@ -31,6 +30,6 @@ const description = post.content.markdown.slice(0, 145);
     <p class="text-sm md:text-base">
       <a href={href}>{dayjs(post.publishedAt).format('D MMMM YYYY')}</a>
     </p>
-    <p class="md:text-lg"><a href={href}>{description}...</a></p>
+    <p class="md:text-lg"><a href={href}>{post.brief}...</a></p>
   </div>
 </div>
