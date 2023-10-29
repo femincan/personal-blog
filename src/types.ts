@@ -11,6 +11,17 @@ export type Author = {
   };
 };
 
+export type Blog = {
+  title: string;
+  about: {
+    text: string;
+  };
+  favicon: string;
+  themeColor: string;
+  ogImageUrl: string;
+  author: Author;
+};
+
 export type Post = {
   slug: string;
   title: string;
