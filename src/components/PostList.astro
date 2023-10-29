@@ -1,0 +1,18 @@
+---
+import Post from '@src/components/Post.astro';
+import type { PostPreview } from '@src/types';
+
+type Props = { posts: PostPreview[] };
+
+const { posts } = Astro.props;
+---
+
+<ul class="flex flex-col gap-5 md:gap-10">
+  {
+    posts.map((post) => (
+      <li>
+        <Post post={post} />
+      </li>
+    ))
+  }
+</ul>
