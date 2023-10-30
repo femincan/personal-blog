@@ -10,9 +10,11 @@ type Props = {
   seoDescription: string;
   seoImage: string;
   seoPageType: 'website' | 'article';
+  seoCanonicalUrl?: string;
 };
 
-const { seoTitle, seoDescription, seoImage, seoPageType } = Astro.props;
+const { seoTitle, seoDescription, seoImage, seoPageType, seoCanonicalUrl } =
+  Astro.props;
 ---
 
 <html lang="en">
@@ -37,6 +39,7 @@ const { seoTitle, seoDescription, seoImage, seoPageType } = Astro.props;
     <meta property="twitter:image" content={seoImage} />
     <meta property="twitter:image:alt" content={seoTitle} />
     <meta property="twitter:creator" content="femincan" />
+    <link rel="canonical" href={seoCanonicalUrl || Astro.url.href} />
     <link
       rel="icon"
       type="image/png"
@@ -47,7 +50,7 @@ const { seoTitle, seoDescription, seoImage, seoPageType } = Astro.props;
   <body>
     <div class="flex h-full w-full flex-col">
       <Navbar />
-      <div class="flex-1 py-14">
+      <div class="flex flex-1 py-14">
         <Container>
           <slot />
         </Container>
