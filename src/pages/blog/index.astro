@@ -1,0 +1,19 @@
+---
+import PostList from '@src/components/PostList.astro';
+import BaseLayout from '@src/layouts/BaseLayout.astro';
+import getAllPosts from '@src/utils/getAllPosts';
+import getBlogData from '@src/utils/getBlogData';
+
+const blogData = await getBlogData();
+const posts = await getAllPosts(true);
+---
+
+<BaseLayout
+  seoTitle={blogData.title}
+  seoDescription={blogData.about.text}
+  seoImage={blogData.ogImageUrl}
+  seoPageType="website"
+>
+  <h1 class="mb-10 text-3xl font-extrabold md:text-4xl">Latest Blog Posts</h1>
+  <PostList posts={posts} />
+</BaseLayout>
