@@ -1,0 +1,54 @@
+---
+import type { GetStaticPaths, InferGetStaticPropsType } from 'astro';
+import dayjs from 'dayjs';
+import getAllPosts from '@src/utils/getAllPosts';
+import BaseLayout from '@src/layouts/BaseLayout.astro';
+import Markdown from '@src/components/Markdown.astro';
+import CoverImage from '@src/components/CoverImage.astro';
+
+import 'highlight.js/styles/base16/material-darker.min.css';
+
+export const getStaticPaths = (async () => {
+  const allPosts = await getAllPosts(false);
+
+  return allPosts.map((post) => {
+    return {
+      params: {
+        slug: post.slug,
+      },
+      props: {
+        ...post,
+      },
+    };
+  });
+}) satisfies GetStaticPaths;
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const post = Astro.props;
+---
+
+<BaseLayout
+  seoTitle={post.title}
+  seoDescription={post.brief}
+  seoImage={post.coverImage ? post.coverImage.url : ''}
+  seoPageType="article"
+  seoCanonicalUrl={post.url}
+>
+  <div class="flex flex-col gap-16">
+    <div class="flex flex-col gap-4">
+      <h1 class="text-3xl font-bold md:text-4xl">{post.title}</h1>
+      <div class="flex">
+        <p class="text-secondary">
+          {dayjs(post.publishedAt).format('D MMMM YYYY')} — {
+            post.readTimeInMinutes
+          } min read
+        </p>
+      </div>
+    </div>
+    <div class="mx-auto overflow-hidden rounded-xl">
+      <CoverImage imageUrl={post.coverImage?.url} altText="Post cover." />
+    </div>
+    <Markdown markdown={post.content.markdown} />
+  </div>
+</BaseLayout>
