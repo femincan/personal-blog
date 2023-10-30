@@ -1,7 +1,7 @@
 ---
-import { Image } from 'astro:assets';
 import dayjs from 'dayjs';
 import type { PostPreview } from '@src/types';
+import CoverImage from './CoverImage.astro';
 
 type Props = {
   post: PostPreview;
@@ -13,15 +13,9 @@ const href = `/blog/${post.slug}`;
 
 <div class="card bg-zinc-800 shadow-sm">
   <div class="card-body p-4 sm:p-6">
-    <figure class="mb-5 w-auto justify-stretch md:mb-10">
-      <a href={href}>
-        <Image
-          src={post.coverImage.url}
-          class="auto h-full"
-          height="420"
-          width="800"
-          alt={post.title}
-        />
+    <figure class="mb-5 w-full justify-stretch rounded-lg md:mb-10">
+      <a href={href} class="w-full">
+        <CoverImage imageUrl={post.coverImage?.url} altText={post.title} />
       </a>
     </figure>
     <h2 class="card-title md:text-2xl">
