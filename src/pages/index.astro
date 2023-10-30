@@ -10,10 +10,10 @@ const posts = await getLatestPosts();
 ---
 
 <BaseLayout
-  pageTitle={blogData.title}
-  pageDescription={blogData.about.text}
-  pageImage={blogData.ogImageUrl}
-  pageType="website"
+  seoTitle={blogData.title}
+  seoDescription={blogData.about.text}
+  seoImage={blogData.ogImageUrl}
+  seoPageType="website"
 >
   <div class="flex flex-col gap-14">
     <AuthorArea author={blogData.author} />

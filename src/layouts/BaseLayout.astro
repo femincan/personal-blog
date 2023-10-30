@@ -6,36 +6,36 @@ import Footer from '@src/components/Footer.astro';
 import '@src/styles/index.css';
 
 type Props = {
-  pageTitle: string;
-  pageDescription: string;
-  pageImage: string;
-  pageType: 'website' | 'article';
+  seoTitle: string;
+  seoDescription: string;
+  seoImage: string;
+  seoPageType: 'website' | 'article';
 };
 
-const { pageTitle, pageDescription, pageImage, pageType } = Astro.props;
+const { seoTitle, seoDescription, seoImage, seoPageType } = Astro.props;
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>{pageTitle}</title>
-    <meta name="description" content={pageDescription} />
-    <meta name="image" content={pageImage} />
+    <title>{seoTitle}</title>
+    <meta name="description" content={seoDescription} />
+    <meta name="image" content={seoImage} />
     <meta name="theme-color" content="#1EB854" />
-    <meta property="og:title" content={pageTitle} />
-    <meta property="og:description" content={pageDescription} />
-    <meta property="og:image" content={pageImage} />
-    <meta property="og:image:alt" content={pageTitle} />
+    <meta property="og:title" content={seoTitle} />
+    <meta property="og:description" content={seoDescription} />
+    <meta property="og:image" content={seoImage} />
+    <meta property="og:image:alt" content={seoTitle} />
     <meta property="og:url" content={Astro.url.href} />
-    <meta property="og:type" content={pageType} />
-    <meta property="og:site_name" content={pageTitle} />
+    <meta property="og:type" content={seoPageType} />
+    <meta property="og:site_name" content={seoTitle} />
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content={pageTitle} />
+    <meta property="twitter:title" content={seoTitle} />
     <meta property="twitter:url" content={Astro.url.href} />
-    <meta property="twitter:description" content={pageDescription} />
-    <meta property="twitter:image" content={pageImage} />
-    <meta property="twitter:image:alt" content={pageTitle} />
+    <meta property="twitter:description" content={seoDescription} />
+    <meta property="twitter:image" content={seoImage} />
+    <meta property="twitter:image:alt" content={seoTitle} />
     <meta property="twitter:creator" content="femincan" />
     <link
       rel="icon"
