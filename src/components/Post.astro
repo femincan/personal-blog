@@ -11,9 +11,9 @@ const { post } = Astro.props;
 const href = `/blog/${post.slug}`;
 ---
 
-<div class="card bg-zinc-800 shadow-sm">
+<div class="card h-full min-w-[300px] max-w-md bg-zinc-800 shadow-sm">
   <div class="card-body p-4 sm:p-6">
-    <figure class="mb-5 w-full justify-stretch rounded-lg md:mb-10">
+    <figure class="mb-4 w-full justify-stretch rounded-lg">
       <a href={href} class="w-full">
         <CoverImage imageUrl={post.coverImage?.url} altText={post.title} />
       </a>

@@ -7,7 +7,9 @@ type Props = { posts: PostPreview[] };
 const { posts } = Astro.props;
 ---
 
-<ul class="flex flex-col gap-5 md:gap-10">
+<ul
+  class="grid h-full max-w-full grid-cols-1 justify-items-center gap-y-5 sm:gap-y-10 md:grid-cols-2 md:gap-10"
+>
   {
     posts.map((post) => (
       <li>
