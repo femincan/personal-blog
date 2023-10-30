@@ -39,3 +39,10 @@ export type Post = PostPreview & {
   };
   readTimeInMinutes: number;
 };
+
+export type About = {
+  url: string;
+  content: {
+    markdown: string;
+  };
+};
