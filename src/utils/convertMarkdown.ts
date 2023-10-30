@@ -6,7 +6,7 @@ import remarkRehype from 'remark-rehype';
 import { unified } from 'unified';
 
 const convertMarkdown = async (content: string) => {
-  const cleanedContent = content.replaceAll(' align="center"', '');
+  const cleanedContent = content.replace(/\salign="\w*"(?=\))/g, '');
 
   const file = await unified()
     .use(remarkParse)
