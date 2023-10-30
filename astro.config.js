@@ -3,6 +3,8 @@ import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import solidJs from '@astrojs/solid-js';
 
+import robotsTxt from 'astro-robots-txt';
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://headless-personal-blog.netlify.app',
@@ -11,6 +13,7 @@ export default defineConfig({
   },
   integrations: [
     sitemap(),
+    robotsTxt(),
     tailwind({
       applyBaseStyles: false,
     }),

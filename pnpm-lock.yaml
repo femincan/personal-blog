@@ -23,6 +23,9 @@ dependencies:
   astro:
     specifier: ^3.4.0
     version: 3.4.0(typescript@5.2.2)
+  astro-robots-txt:
+    specifier: ^1.0.0
+    version: 1.0.0
   dayjs:
     specifier: ^1.11.10
     version: 1.11.10
@@ -2084,6 +2087,16 @@ packages:
       - supports-color
     dev: true
 
+  /astro-robots-txt@1.0.0:
+    resolution:
+      {
+        integrity: sha512-6JQSLid4gMhoWjOm85UHLkgrw0+hHIjnJVIUqxjU2D6feKlVyYukMNYjH44ZDZBK1P8hNxd33PgWlHzCASvedA==,
+      }
+    dependencies:
+      valid-filename: 4.0.0
+      zod: 3.22.4
+    dev: false
+
   /astro@3.4.0(typescript@5.2.2):
     resolution:
       {
@@ -3427,6 +3440,14 @@ packages:
     dependencies:
       flat-cache: 3.1.1
     dev: true
+
+  /filename-reserved-regex@3.0.0:
+    resolution:
+      {
+        integrity: sha512-hn4cQfU6GOT/7cFHXBqeBg2TbrMBgdD0kcjLhvSQYYwm3s4B6cjvBfb7nBALJLAXqmU5xajSa7X2NnUud/VCdw==,
+      }
+    engines: { node: ^12.20.0 || ^14.13.1 || >=16.0.0 }
+    dev: false
 
   /fill-range@7.0.1:
     resolution:
@@ -7738,6 +7759,16 @@ packages:
       sade: 1.8.1
     dev: false
 
+  /valid-filename@4.0.0:
+    resolution:
+      {
+        integrity: sha512-VEYTpTVPMgO799f2wI7zWf0x2C54bPX6NAfbZ2Z8kZn76p+3rEYCTYVYzMUcVSMvakxMQTriBf24s3+WeXJtEg==,
+      }
+    engines: { node: ^12.20.0 || ^14.13.1 || >=16.0.0 }
+    dependencies:
+      filename-reserved-regex: 3.0.0
+    dev: false
+
   /validate-html-nesting@1.2.2:
     resolution:
       {
@@ -8228,6 +8259,13 @@ packages:
     resolution:
       {
         integrity: sha512-+dTu2m6gmCbO9Ahm4ZBDapx2O6ZY9QSPXst2WXjcznPMwf2YNpn3RevLx4KkZp1OPW/ouFcoBtBzFz/LeY69oA==,
+      }
+    dev: false
+
+  /zod@3.22.4:
+    resolution:
+      {
+        integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==,
       }
     dev: false
 
