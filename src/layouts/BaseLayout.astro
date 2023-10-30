@@ -1,4 +1,5 @@
 ---
+import Container from '@src/components/Container.astro';
 import Navbar from '@src/components/Navbar.astro';
 import Footer from '@src/components/Footer.astro';
 
@@ -46,10 +47,10 @@ const { pageTitle, pageDescription, pageImage, pageType } = Astro.props;
   <body>
     <div class="flex h-full w-full flex-col">
       <Navbar />
-      <div
-        class="container mx-auto max-w-3xl flex-1 px-5 py-14 sm:px-10 md:px-20"
-      >
-        <slot />
+      <div class="flex-1 py-14">
+        <Container>
+          <slot />
+        </Container>
       </div>
       <Footer />
     </div>

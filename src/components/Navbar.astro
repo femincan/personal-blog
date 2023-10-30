@@ -1,15 +1,18 @@
 ---
+import Container from './Container.astro';
 import Logo from './Logo.astro';
 import NavMenu from './NavMenu';
 ---
 
-<div class="navbar bg-neutral px-5 sm:px-10 md:px-20">
-  <div class="container relative mx-auto flex max-w-3xl justify-between">
-    <div>
-      <a href="/">
-        <Logo />
-      </a>
+<div class="navbar bg-neutral p-0">
+  <Container>
+    <div class="relative flex w-full items-center justify-between">
+      <div>
+        <a href="/">
+          <Logo />
+        </a>
+      </div>
+      <NavMenu client:load />
     </div>
-    <NavMenu client:load />
-  </div>
+  </Container>
 </div>
