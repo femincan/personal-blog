@@ -1,0 +1,19 @@
+---
+import Markdown from '@src/components/Markdown.astro';
+import BaseLayout from '@src/layouts/BaseLayout.astro';
+import getAboutPageData from '@src/utils/getAboutPageData';
+import getBlogData from '@src/utils/getBlogData';
+
+const blogData = await getBlogData();
+const aboutPageData = await getAboutPageData();
+---
+
+<BaseLayout
+  seoTitle={blogData.title}
+  seoDescription={blogData.about.text}
+  seoPageType="website"
+  seoImage={blogData.ogImageUrl}
+  seoCanonicalUrl={aboutPageData.url}
+>
+  <Markdown markdown={aboutPageData.content.markdown} />
+</BaseLayout>
