@@ -8,6 +8,9 @@ dependencies:
   '@astrojs/check':
     specifier: ^0.2.1
     version: 0.2.1(prettier-plugin-astro@0.12.1)(prettier@3.0.3)(typescript@5.2.2)
+  '@astrojs/rss':
+    specifier: ^3.0.0
+    version: 3.0.0
   '@astrojs/solid-js':
     specifier: ^3.0.2
     version: 3.0.2(solid-js@1.8.4)(vite@4.5.0)
@@ -232,6 +235,16 @@ packages:
     engines: { node: '>=18.14.1' }
     dependencies:
       prismjs: 1.29.0
+    dev: false
+
+  /@astrojs/rss@3.0.0:
+    resolution:
+      {
+        integrity: sha512-PMX8iqByk9gtOrusikten/oF5uHjOCZigL6RuXFBUu+xtdKQxXzfIohJ99V2haA4FJjVDyibDTGzXR81POBMxQ==,
+      }
+    dependencies:
+      fast-xml-parser: 4.3.2
+      kleur: 4.1.5
     dev: false
 
   /@astrojs/solid-js@3.0.2(solid-js@1.8.4)(vite@4.5.0):
@@ -3350,6 +3363,16 @@ packages:
         integrity: sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw==,
       }
     dev: true
+
+  /fast-xml-parser@4.3.2:
+    resolution:
+      {
+        integrity: sha512-rmrXUXwbJedoXkStenj1kkljNF7ugn5ZjR9FJcwmCfcCbtOMDghPajbc+Tck6vE6F5XsDmx+Pr2le9fw8+pXBg==,
+      }
+    hasBin: true
+    dependencies:
+      strnum: 1.0.5
+    dev: false
 
   /fastparse@1.1.2:
     resolution:
@@ -7125,6 +7148,13 @@ packages:
       }
     engines: { node: '>=8' }
     dev: true
+
+  /strnum@1.0.5:
+    resolution:
+      {
+        integrity: sha512-J8bbNyKKXl5qYcR36TIO8W3mVGVHrmmxsd5PAItGkmyzwJvybiw2IVq5nqd0i4LSNSkB/sx9VHllbfFdr9k1JA==,
+      }
+    dev: false
 
   /sucrase@3.34.0:
     resolution:
