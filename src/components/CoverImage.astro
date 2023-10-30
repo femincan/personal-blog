@@ -1,0 +1,18 @@
+---
+import { Image } from 'astro:assets';
+
+type Props = {
+  imageUrl: string | undefined;
+  altText: string;
+};
+
+const { imageUrl, altText } = Astro.props;
+---
+
+{
+  imageUrl ? (
+    <Image src={imageUrl} height="420" width="840" alt={altText} />
+  ) : (
+    <div class="aspect-[840/420] w-full bg-gradient-to-r from-green-200 to-blue-200" />
+  )
+}
