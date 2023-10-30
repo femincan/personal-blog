@@ -26,7 +26,7 @@ export type PostPreview = {
   slug: string;
   title: string;
   publishedAt: string;
-  coverImage: {
+  coverImage: null | {
     url: string;
   };
   brief: string;
