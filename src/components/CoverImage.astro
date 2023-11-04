@@ -11,8 +11,8 @@ const { imageUrl, altText } = Astro.props;
 
 {
   imageUrl ? (
-    <Image src={imageUrl} height="420" width="840" alt={altText} />
+    <Image src={imageUrl} height="420" width="800" alt={altText} />
   ) : (
-    <div class="aspect-[840/420] w-full bg-gradient-to-r from-green-200 to-blue-200" />
+    <div class="aspect-[800/420] w-full bg-gradient-to-r from-green-200 to-blue-200" />
   )
 }
