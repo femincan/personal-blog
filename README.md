@@ -1,4 +1,4 @@
-# Po-Fi
+# Personal Blog
 
 [![Live Demo Link](https://img.shields.io/website?down_message=offline&label=demo&style=for-the-badge&up_message=online&url=https://headless-personal-blog.netlify.app)](https://headless-personal-blog.netlify.app)
 
