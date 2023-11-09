@@ -1,9 +1,7 @@
 import { defineConfig } from 'astro/config';
-import sitemap from '@astrojs/sitemap';
+import robotsTxt from 'astro-robots-txt';
 import tailwind from '@astrojs/tailwind';
 import solidJs from '@astrojs/solid-js';
-
-import robotsTxt from 'astro-robots-txt';
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,8 +10,15 @@ export default defineConfig({
     domains: ['cdn.hashnode.com'],
   },
   integrations: [
-    sitemap(),
-    robotsTxt(),
+    robotsTxt({
+      policy: [
+        {
+          userAgent: '*',
+          disallow: '/',
+        },
+      ],
+      sitemap: false,
+    }),
     tailwind({
       applyBaseStyles: false,
     }),
